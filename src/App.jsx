@@ -1,15 +1,23 @@
 import { useState } from 'react'
 import useSwitch from './useSwitch'
+import useDate from './useDate'
 
 function App() {
   //const { isOn: on, toggle: switcha } = useSwitch()
   const [on, switcha] = useSwitch()
+  const currentDate = useDate()
+
 
   return (
     <>
       <div>
         <h1>Il valore è: {on ? "ON" : "OFF"}</h1>
         <button onClick={switcha}>Cambia Stato</button>
+      </div>
+
+      <div>
+        <h1>Data e ora attuali:</h1>
+        <p>{currentDate.toLocaleString()}</p>
       </div>
     </>
   )
