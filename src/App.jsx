@@ -2,12 +2,14 @@ import { useState } from 'react'
 import useSwitch from './useSwitch'
 import useDate from './useDate'
 import useCustomPointer from './useCustomPointer'
+import useKeyPress from './useKeyPress'
 
 function App() {
   //const { isOn: on, toggle: switcha } = useSwitch()
   const [on, switcha] = useSwitch()
   const currentDate = useDate()
   const customPointer = useCustomPointer("👾")
+  const isEnterPressed = useKeyPress("Enter");
 
 
   return (
@@ -26,6 +28,10 @@ function App() {
           <h1>Sposta il mouse per vedere il cursore personalizzato!</h1>
           {customPointer}
         </div>
+      </div>
+      <div>
+        <h1>Tieni premuto "Enter" per testare il custom hook</h1>
+        <p>{isEnterPressed ? "Enter premuto! ✅" : "Aspettando input... ⌨️"}</p>
       </div>
     </>
   )

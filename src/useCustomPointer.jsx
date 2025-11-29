@@ -18,7 +18,8 @@ export default function useCustomPointer(icon) {
 				top: position.y,
 				left: position.x,
 				transform: "translate(-50%, -50%)",
-				cursor: "none"
+				cursor: "none",
+				pointerEvents: "none"
 
 			}}
 		>
